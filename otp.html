@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container" style="margin-top: 60px;">
+  <h2>Verify Otp</h2>
+
+	<form method="POST" action="{{url_for('verifyToken')}}">
+	    <div class="form-group">
+			  <label for="email"><b>Email</b></label>
+			  <input type="email" class="form-control" id="email" name="email" value="{{email}}" readonly>
+		</div>
+		
+		<div class="form-group">
+			<label for="psw"><b>New password</b></label>
+			<input type="password" class="form-control" name="newpsw" required placeholder="enter password">
+		</div>
+		<div class="form-group">
+			<label for="utoken"><b>OTP</b></label>
+			<input type="text" class="form-control" name="utoken" id="utoken" required placeholder="enter OTP">
+		</div>
+		<button type="submit" class="btn btn-primary">Reset</button>&nbsp;&nbsp;
+		<button type="submit" class="btn btn-danger">Cancel</button>
+	</form>
+</div>
+
+{% endblock %}
